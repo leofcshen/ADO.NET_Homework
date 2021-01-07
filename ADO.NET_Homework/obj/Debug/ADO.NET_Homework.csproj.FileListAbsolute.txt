@@ -8,3 +8,23 @@ D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.csproj.Ge
 D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.csproj.CoreCompileInputs.cache
 D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.exe
 D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.pdb
+C:\Shared\ADO NET 作業\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\ADO.NET_Homework.exe.config
+C:\Shared\ADO NET 作業\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\ADO.NET_Homework.exe
+C:\Shared\ADO NET 作業\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\ADO.NET_Homework.pdb
+C:\Shared\ADO NET 作業\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.csprojAssemblyReference.cache
+C:\Shared\ADO NET 作業\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.Frm_Index.resources
+C:\Shared\ADO NET 作業\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.Properties.Resources.resources
+C:\Shared\ADO NET 作業\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.csproj.GenerateResource.cache
+C:\Shared\ADO NET 作業\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.csproj.CoreCompileInputs.cache
+C:\Shared\ADO NET 作業\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.exe
+C:\Shared\ADO NET 作業\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.pdb
+D:\FileZilla\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\ADO.NET_Homework.exe.config
+D:\FileZilla\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\ADO.NET_Homework.exe
+D:\FileZilla\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\ADO.NET_Homework.pdb
+D:\FileZilla\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.csprojAssemblyReference.cache
+D:\FileZilla\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.Frm_Index.resources
+D:\FileZilla\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.Properties.Resources.resources
+D:\FileZilla\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.csproj.GenerateResource.cache
+D:\FileZilla\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.csproj.CoreCompileInputs.cache
+D:\FileZilla\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.exe
+D:\FileZilla\25沈芳錡\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.pdb

@@ -46,11 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AWDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AWDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Frm_Index.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,17 +71,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="AWDataSet1.xsc">
-      <DependentUpon>AWDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="AWDataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AWDataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="AWDataSet1.xss">
-      <DependentUpon>AWDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="NWDataSet1.xsc">
       <DependentUpon>NWDataSet1.xsd</DependentUpon>
     </None>

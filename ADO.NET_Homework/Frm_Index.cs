@@ -16,7 +16,7 @@ namespace ADO.NET_Homework
         public Frm_Index()
         {
             InitializeComponent();
-            this.tabControl1.SelectedIndex = 4;
+            this.tabControl1.SelectedIndex = 3;
             this.categoriesTableAdapter1.Fill(this.nwDataSet1.Categories);
             this.productsTableAdapter1.Fill(this.nwDataSet1.Products);
             this.customersTableAdapter1.Fill(this.nwDataSet1.Customers);
@@ -135,11 +135,12 @@ namespace ADO.NET_Homework
             SqlDataAdapter adapter2 = new SqlDataAdapter("select * from Products", conn);
             SqlDataAdapter adapter3 = new SqlDataAdapter("select * from Categories", conn);
             DataSet dsCustomers = new DataSet();
-            DataSet dsProducts = new DataSet();
-            DataSet dsCategories = new DataSet();
             adapter1.Fill(dsCustomers);
+            DataSet dsProducts = new DataSet();
             adapter2.Fill(dsProducts);
+            DataSet dsCategories = new DataSet();
             adapter3.Fill(dsCategories);
+
             this.dataGridCustomers.DataSource = dsCustomers.Tables[0];
             this.dataGridProducts.DataSource = dsProducts.Tables[0];
             this.dataGridCategories.DataSource = dsCategories.Tables[0];
@@ -190,6 +191,7 @@ namespace ADO.NET_Homework
                     {
                         sLen = "{0,-" + (arrayColumn[j] + 1) + "}";//以最長長度+1格式化字串                      
                         z += string.Format(sLen, dt.Rows[row][j]);
+                        //z += string.Format("{0,-10}", dt.Rows[row][j]);
                     }
                     //listBox2.Items.Add(dt.Rows[row] + "  ");
                     this.listBox4.Items.Add(z);//輸出欄位資料
@@ -197,7 +199,5 @@ namespace ADO.NET_Homework
                 this.listBox4.Items.Add(blockLine);
             }
         }
-
-        
     }
 }
