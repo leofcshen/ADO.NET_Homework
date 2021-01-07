@@ -1,0 +1,10 @@
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\ADO.NET_Homework.exe.config
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\ADO.NET_Homework.exe
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\ADO.NET_Homework.pdb
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.csprojAssemblyReference.cache
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.Frm_Index.resources
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.Properties.Resources.resources
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.csproj.GenerateResource.cache
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.csproj.CoreCompileInputs.cache
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.exe
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.pdb
