@@ -16,7 +16,7 @@ namespace ADO.NET_Homework
         public Frm_Index()
         {
             InitializeComponent();
-            this.tabControl1.SelectedIndex = 3;
+            this.tabControl1.SelectedIndex = 4;
             this.categoriesTableAdapter1.Fill(this.nwDataSet1.Categories);
             this.productsTableAdapter1.Fill(this.nwDataSet1.Products);
             this.customersTableAdapter1.Fill(this.nwDataSet1.Customers);
@@ -178,9 +178,8 @@ namespace ADO.NET_Homework
                 string sLen;
                 for (int column = 0; column <= dt.Columns.Count - 1; column++)//整理欄位名稱
                 {
-                    sLen = "{0,-" + (arrayColumn[column]+1)+"}" ;//以最長長度+1格式化輸出
-                    s += String.Format(sLen, dt.Columns[column].ColumnName);                    
-                    //-arrayColumn[column
+                    sLen = "{0,-" + (arrayColumn[column]+1)+"}" ;//以最長長度+1格式化輸出                    
+                    s += String.Format(sLen, dt.Columns[column].ColumnName);
                 }
                 this.listBox4.Items.Add(s);//輸出欄位名稱
                 this.listBox4.Items.Add(oneLine);
@@ -198,6 +197,66 @@ namespace ADO.NET_Homework
                 }
                 this.listBox4.Items.Add(blockLine);
             }
+        }
+        BindingSource bs = null;
+        private void Frm_Index_Load(object sender, EventArgs e)
+        {
+            bs = new BindingSource();
+            // TODO: 這行程式碼會將資料載入 'aWDataSet1.ProductPhoto' 資料表。您可以視需要進行移動或移除。
+            this.productPhotoTableAdapter.Fill(this.aWDataSet1.ProductPhoto);
+            this.bs.DataSource = this.aWDataSet1.ProductPhoto;
+            this.productPhotoDataGridView.DataSource = this.bs;
+            this.bindingNavigator1.BindingSource = this.bs;
+
+            SqlConnection con = null;
+            try
+            {
+                comboBox1.Items.Clear();
+                con = new SqlConnection("Data Source=.;Initial Catalog=AdventureWorks;Integrated Security=True");                
+                con.Open();
+                SqlCommand com = new SqlCommand("select distinct year(ModifiedDate) from [Production].[ProductPhoto]", con);
+                SqlDataReader datareader = com.ExecuteReader();
+                while (datareader.Read())
+                {
+                    this.comboBox1.Items.Add(datareader[0].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            //this.comboBox1.Items.Add(123);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //string dtp1 = dateTimePicker1.Text;
+            //string dtp2 = dateTimePicker2.Text;
+            //string[] arrayDtp1 = dtp1.Split(new char[3] { '年', '月','日'});
+            //string[] arrayDtp2 = dtp2.Split(new char[3] { '年', '月', '日' });
+            //arrayDtp1[1] = arrayDtp1[1].PadLeft(2, '0');
+            //arrayDtp1[2] = arrayDtp1[2].PadLeft(2, '0');
+            //arrayDtp2[1] = arrayDtp2[1].PadLeft(2, '0');
+            //arrayDtp2[2] = arrayDtp2[2].PadLeft(2, '0');
+            //dtp1 = arrayDtp1[0] + arrayDtp1[1] + arrayDtp1[2];
+            //dtp2 = arrayDtp2[0] + arrayDtp2[1] + arrayDtp2[2];
+
+            this.productPhotoTableAdapter.FillBy(this.aWDataSet1.ProductPhoto, dateTimePicker1.Value, dateTimePicker2.Value);
+            this.productPhotoDataGridView.DataSource = this.aWDataSet1.ProductPhoto;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //this.productPhotoTableAdapter.FillBy1(this.aWDataSet1.ProductPhoto, Convert.ToInt32(comboBox1.Text));
+            this.productPhotoTableAdapter.FillBy1(this.aWDataSet1.ProductPhoto, Convert.ToDecimal(comboBox1.Text));
+            this.productPhotoDataGridView.DataSource = this.aWDataSet1.ProductPhoto;
+            //this.productPhotoTableAdapter.FillByCount(this.aWDataSet1.ProductPhoto, Convert.ToDecimal(comboBox1.Text));
+            //this.productPhotoDataGridView.DataSource = this.aWDataSet1.ProductPhoto;
         }
     }
 }
