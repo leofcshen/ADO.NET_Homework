@@ -66,6 +66,16 @@
             this.dataGridCustomers = new System.Windows.Forms.DataGridView();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.productPhotoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPhotoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aWDataSet1 = new ADO.NET_Homework.AWDataSet1();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -89,24 +99,27 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.productPhotoTableAdapter = new ADO.NET_Homework.AWDataSet1TableAdapters.ProductPhotoTableAdapter();
+            this.tableAdapterManager = new ADO.NET_Homework.AWDataSet1TableAdapters.TableAdapterManager();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.cbb6 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.listView6 = new System.Windows.Forms.ListView();
             this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nwDataSet1 = new ADO.NET_Homework.NWDataSet1();
             this.categoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productsTableAdapter1 = new ADO.NET_Homework.NWDataSet1TableAdapters.ProductsTableAdapter();
             this.categoriesTableAdapter1 = new ADO.NET_Homework.NWDataSet1TableAdapters.CategoriesTableAdapter();
             this.customersTableAdapter1 = new ADO.NET_Homework.NWDataSet1TableAdapters.CustomersTableAdapter();
-            this.aWDataSet1 = new ADO.NET_Homework.AWDataSet1();
-            this.productPhotoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productPhotoTableAdapter = new ADO.NET_Homework.AWDataSet1TableAdapters.ProductPhotoTableAdapter();
-            this.tableAdapterManager = new ADO.NET_Homework.AWDataSet1TableAdapters.TableAdapterManager();
-            this.productPhotoDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button6 = new System.Windows.Forms.Button();
+            this.ImageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.ctms = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.largeIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smallIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -136,14 +149,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productPhotoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productPhotoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aWDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.Panel2.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
+            this.splitContainer7.Panel1.SuspendLayout();
+            this.splitContainer7.Panel2.SuspendLayout();
+            this.splitContainer7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aWDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productPhotoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productPhotoDataGridView)).BeginInit();
+            this.ctms.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -153,6 +180,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -162,10 +190,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView3);
-            this.tabPage1.Controls.Add(this.listBox1);
-            this.tabPage1.Controls.Add(this.btnH1Discon);
-            this.tabPage1.Controls.Add(this.btnH1Con);
+            this.tabPage1.Controls.Add(this.splitContainer5);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -177,25 +202,27 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(208, 229);
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(1284, 553);
+            this.dataGridView3.Size = new System.Drawing.Size(1070, 539);
             this.dataGridView3.TabIndex = 8;
             // 
             // listBox1
             // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(208, 22);
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1284, 184);
+            this.listBox1.Size = new System.Drawing.Size(1070, 125);
             this.listBox1.TabIndex = 7;
             // 
             // btnH1Discon
             // 
-            this.btnH1Discon.Location = new System.Drawing.Point(16, 65);
+            this.btnH1Discon.Location = new System.Drawing.Point(14, 67);
             this.btnH1Discon.Margin = new System.Windows.Forms.Padding(2);
             this.btnH1Discon.Name = "btnH1Discon";
             this.btnH1Discon.Size = new System.Drawing.Size(163, 36);
@@ -206,7 +233,7 @@
             // 
             // btnH1Con
             // 
-            this.btnH1Con.Location = new System.Drawing.Point(16, 16);
+            this.btnH1Con.Location = new System.Drawing.Point(14, 18);
             this.btnH1Con.Margin = new System.Windows.Forms.Padding(2);
             this.btnH1Con.Name = "btnH1Con";
             this.btnH1Con.Size = new System.Drawing.Size(163, 36);
@@ -321,7 +348,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 766F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 778F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridView2, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.cbbDisconnected, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
@@ -342,18 +369,19 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(486, 38);
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(474, 38);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(734, 540);
+            this.dataGridView2.Size = new System.Drawing.Size(772, 540);
             this.dataGridView2.TabIndex = 19;
             // 
             // cbbDisconnected
             // 
             this.cbbDisconnected.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoriesBindingSource, "CategoryName", true));
             this.cbbDisconnected.FormattingEnabled = true;
-            this.cbbDisconnected.Location = new System.Drawing.Point(486, 6);
+            this.cbbDisconnected.Location = new System.Drawing.Point(474, 6);
             this.cbbDisconnected.Name = "cbbDisconnected";
             this.cbbDisconnected.Size = new System.Drawing.Size(121, 20);
             this.cbbDisconnected.TabIndex = 19;
@@ -386,7 +414,7 @@
             this.listBox3.ItemHeight = 12;
             this.listBox3.Location = new System.Drawing.Point(96, 38);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(381, 540);
+            this.listBox3.Size = new System.Drawing.Size(369, 540);
             this.listBox3.TabIndex = 5;
             // 
             // cbbConnected
@@ -439,7 +467,7 @@
             this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
             // 
-            // splitContainer1.Panel1
+            // 
             // 
             this.splitContainer1.Panel1.Controls.Add(this.btnToGridView);
             this.splitContainer1.Panel1.Controls.Add(this.btnToListBox);
@@ -594,6 +622,81 @@
             this.tabPage5.Text = "Homework5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(673, 20);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(136, 23);
+            this.button6.TabIndex = 83;
+            this.button6.Text = "Group by Year (count)";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // productPhotoDataGridView
+            // 
+            this.productPhotoDataGridView.AutoGenerateColumns = false;
+            this.productPhotoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productPhotoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewImageColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewImageColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.productPhotoDataGridView.DataSource = this.productPhotoBindingSource;
+            this.productPhotoDataGridView.Location = new System.Drawing.Point(39, 71);
+            this.productPhotoDataGridView.Name = "productPhotoDataGridView";
+            this.productPhotoDataGridView.RowTemplate.Height = 24;
+            this.productPhotoDataGridView.Size = new System.Drawing.Size(770, 280);
+            this.productPhotoDataGridView.TabIndex = 82;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductPhotoID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ProductPhotoID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "ThumbNailPhoto";
+            this.dataGridViewImageColumn1.HeaderText = "ThumbNailPhoto";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ThumbnailPhotoFileName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ThumbnailPhotoFileName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.DataPropertyName = "LargePhoto";
+            this.dataGridViewImageColumn2.HeaderText = "LargePhoto";
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "LargePhotoFileName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "LargePhotoFileName";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ModifiedDate";
+            this.dataGridViewTextBoxColumn4.HeaderText = "ModifiedDate";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // productPhotoBindingSource
+            // 
+            this.productPhotoBindingSource.DataMember = "ProductPhoto";
+            this.productPhotoBindingSource.DataSource = this.aWDataSet1;
+            // 
+            // aWDataSet1
+            // 
+            this.aWDataSet1.DataSetName = "AWDataSet1";
+            this.aWDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -676,6 +779,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "位置";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(35, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -809,6 +913,110 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(108, 22);
             this.dateTimePicker1.TabIndex = 71;
             // 
+            // productPhotoTableAdapter
+            // 
+            this.productPhotoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ProductPhotoTableAdapter = this.productPhotoTableAdapter;
+            this.tableAdapterManager.UpdateOrder = ADO.NET_Homework.AWDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // splitContainer5
+            // 
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer5.Name = "splitContainer5";
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.btnH1Con);
+            this.splitContainer5.Panel1.Controls.Add(this.btnH1Discon);
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
+            this.splitContainer5.Size = new System.Drawing.Size(1269, 668);
+            this.splitContainer5.SplitterDistance = 195;
+            this.splitContainer5.TabIndex = 9;
+            // 
+            // splitContainer6
+            // 
+            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Name = "splitContainer6";
+            this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer6.Panel1
+            // 
+            this.splitContainer6.Panel1.Controls.Add(this.listBox1);
+            // 
+            // splitContainer6.Panel2
+            // 
+            this.splitContainer6.Panel2.Controls.Add(this.dataGridView3);
+            this.splitContainer6.Size = new System.Drawing.Size(1070, 668);
+            this.splitContainer6.SplitterDistance = 125;
+            this.splitContainer6.TabIndex = 0;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.splitContainer7);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1275, 674);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Homework6";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer7
+            // 
+            this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer7.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer7.Name = "splitContainer7";
+            this.splitContainer7.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer7.Panel1
+            // 
+            this.splitContainer7.Panel1.Controls.Add(this.label8);
+            this.splitContainer7.Panel1.Controls.Add(this.cbb6);
+            // 
+            // splitContainer7.Panel2
+            // 
+            this.splitContainer7.Panel2.Controls.Add(this.listView6);
+            this.splitContainer7.Size = new System.Drawing.Size(1269, 668);
+            this.splitContainer7.SplitterDistance = 246;
+            this.splitContainer7.TabIndex = 0;
+            // 
+            // cbb6
+            // 
+            this.cbb6.FormattingEnabled = true;
+            this.cbb6.Location = new System.Drawing.Point(217, 62);
+            this.cbb6.Name = "cbb6";
+            this.cbb6.Size = new System.Drawing.Size(135, 20);
+            this.cbb6.TabIndex = 2;
+            this.cbb6.SelectedIndexChanged += new System.EventHandler(this.cbb6_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(89, 62);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 12);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Country:";
+            // 
+            // listView6
+            // 
+            this.listView6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView6.HideSelection = false;
+            this.listView6.Location = new System.Drawing.Point(0, 0);
+            this.listView6.Name = "listView6";
+            this.listView6.Size = new System.Drawing.Size(1269, 418);
+            this.listView6.TabIndex = 1;
+            this.listView6.UseCompatibleStateImageBehavior = false;
+            // 
             // categoriesBindingSource
             // 
             this.categoriesBindingSource.DataMember = "Categories";
@@ -836,90 +1044,83 @@
             // 
             this.customersTableAdapter1.ClearBeforeFill = true;
             // 
-            // aWDataSet1
+            // ImageList1
             // 
-            this.aWDataSet1.DataSetName = "AWDataSet1";
-            this.aWDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.ImageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList1.ImageStream")));
+            this.ImageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList1.Images.SetKeyName(0, "FLGGERM.ICO");
+            this.ImageList1.Images.SetKeyName(1, "CTRCAN.ICO");
+            this.ImageList1.Images.SetKeyName(2, "CTRFRAN.ICO");
+            this.ImageList1.Images.SetKeyName(3, "CTRGERM.ICO");
+            this.ImageList1.Images.SetKeyName(4, "CTRITALY.ICO");
+            this.ImageList1.Images.SetKeyName(5, "CTRJAPAN.ICO");
+            this.ImageList1.Images.SetKeyName(6, "CTRMEX.ICO");
+            this.ImageList1.Images.SetKeyName(7, "CTRSKOR.ICO");
+            this.ImageList1.Images.SetKeyName(8, "CTRSPAIN.ICO");
+            this.ImageList1.Images.SetKeyName(9, "CTRUK.ICO");
+            this.ImageList1.Images.SetKeyName(10, "CTRUSA.ICO");
+            this.ImageList1.Images.SetKeyName(11, "FLGASTRL.ICO");
+            this.ImageList1.Images.SetKeyName(12, "FLGAUSTA.ICO");
+            this.ImageList1.Images.SetKeyName(13, "FLGBELG.ICO");
+            this.ImageList1.Images.SetKeyName(14, "FLGBRAZL.ICO");
+            this.ImageList1.Images.SetKeyName(15, "FLGCAN.ICO");
+            this.ImageList1.Images.SetKeyName(16, "FLGDEN.ICO");
+            this.ImageList1.Images.SetKeyName(17, "FLGFIN.ICO");
+            this.ImageList1.Images.SetKeyName(18, "FLGFRAN.ICO");
             // 
-            // productPhotoBindingSource
+            // ImageList2
             // 
-            this.productPhotoBindingSource.DataMember = "ProductPhoto";
-            this.productPhotoBindingSource.DataSource = this.aWDataSet1;
+            this.ImageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList2.ImageStream")));
+            this.ImageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList2.Images.SetKeyName(0, "FLGGERM.ICO");
+            this.ImageList2.Images.SetKeyName(1, "CTRCAN.ICO");
+            this.ImageList2.Images.SetKeyName(2, "CTRFRAN.ICO");
+            this.ImageList2.Images.SetKeyName(3, "CTRGERM.ICO");
+            this.ImageList2.Images.SetKeyName(4, "CTRITALY.ICO");
+            this.ImageList2.Images.SetKeyName(5, "CTRJAPAN.ICO");
+            this.ImageList2.Images.SetKeyName(6, "CTRMEX.ICO");
+            this.ImageList2.Images.SetKeyName(7, "CTRSKOR.ICO");
+            this.ImageList2.Images.SetKeyName(8, "CTRSPAIN.ICO");
+            this.ImageList2.Images.SetKeyName(9, "CTRUK.ICO");
+            this.ImageList2.Images.SetKeyName(10, "CTRUSA.ICO");
+            this.ImageList2.Images.SetKeyName(11, "FLGASTRL.ICO");
+            this.ImageList2.Images.SetKeyName(12, "FLGAUSTA.ICO");
+            this.ImageList2.Images.SetKeyName(13, "FLGBELG.ICO");
+            this.ImageList2.Images.SetKeyName(14, "FLGBRAZL.ICO");
+            this.ImageList2.Images.SetKeyName(15, "FLGCAN.ICO");
+            this.ImageList2.Images.SetKeyName(16, "FLGDEN.ICO");
+            this.ImageList2.Images.SetKeyName(17, "FLGFIN.ICO");
+            this.ImageList2.Images.SetKeyName(18, "FLGFRAN.ICO");
             // 
-            // productPhotoTableAdapter
+            // ctms
             // 
-            this.productPhotoTableAdapter.ClearBeforeFill = true;
+            this.ctms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.largeIconToolStripMenuItem,
+            this.smallIconToolStripMenuItem,
+            this.detailToolStripMenuItem});
+            this.ctms.Name = "ctms";
+            this.ctms.Size = new System.Drawing.Size(181, 92);
             // 
-            // tableAdapterManager
+            // largeIconToolStripMenuItem
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ProductPhotoTableAdapter = this.productPhotoTableAdapter;
-            this.tableAdapterManager.UpdateOrder = ADO.NET_Homework.AWDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.largeIconToolStripMenuItem.Name = "largeIconToolStripMenuItem";
+            this.largeIconToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.largeIconToolStripMenuItem.Text = "LargeIcon";
+            this.largeIconToolStripMenuItem.Click += new System.EventHandler(this.largeIconToolStripMenuItem_Click);
             // 
-            // productPhotoDataGridView
+            // smallIconToolStripMenuItem
             // 
-            this.productPhotoDataGridView.AutoGenerateColumns = false;
-            this.productPhotoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productPhotoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewImageColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewImageColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.productPhotoDataGridView.DataSource = this.productPhotoBindingSource;
-            this.productPhotoDataGridView.Location = new System.Drawing.Point(39, 71);
-            this.productPhotoDataGridView.Name = "productPhotoDataGridView";
-            this.productPhotoDataGridView.RowTemplate.Height = 24;
-            this.productPhotoDataGridView.Size = new System.Drawing.Size(770, 280);
-            this.productPhotoDataGridView.TabIndex = 82;
+            this.smallIconToolStripMenuItem.Name = "smallIconToolStripMenuItem";
+            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.smallIconToolStripMenuItem.Text = "SmallIcon";
+            this.smallIconToolStripMenuItem.Click += new System.EventHandler(this.smallIconToolStripMenuItem_Click);
             // 
-            // dataGridViewTextBoxColumn1
+            // detailToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductPhotoID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ProductPhotoID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "ThumbNailPhoto";
-            this.dataGridViewImageColumn1.HeaderText = "ThumbNailPhoto";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ThumbnailPhotoFileName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ThumbnailPhotoFileName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.DataPropertyName = "LargePhoto";
-            this.dataGridViewImageColumn2.HeaderText = "LargePhoto";
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "LargePhotoFileName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "LargePhotoFileName";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ModifiedDate";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ModifiedDate";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(673, 20);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(136, 23);
-            this.button6.TabIndex = 83;
-            this.button6.Text = "Group by Year (count)";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.detailToolStripMenuItem.Name = "detailToolStripMenuItem";
+            this.detailToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detailToolStripMenuItem.Text = "Detail";
+            this.detailToolStripMenuItem.Click += new System.EventHandler(this.detailToolStripMenuItem_Click);
             // 
             // Frm_Index
             // 
@@ -962,15 +1163,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productPhotoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productPhotoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aWDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
+            this.splitContainer5.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.splitContainer7.Panel1.ResumeLayout(false);
+            this.splitContainer7.Panel1.PerformLayout();
+            this.splitContainer7.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
+            this.splitContainer7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aWDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productPhotoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productPhotoDataGridView)).EndInit();
+            this.ctms.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1054,6 +1270,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.SplitContainer splitContainer5;
+        private System.Windows.Forms.SplitContainer splitContainer6;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.SplitContainer splitContainer7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbb6;
+        private System.Windows.Forms.ListView listView6;
+        internal System.Windows.Forms.ImageList ImageList1;
+        internal System.Windows.Forms.ImageList ImageList2;
+        private System.Windows.Forms.ContextMenuStrip ctms;
+        private System.Windows.Forms.ToolStripMenuItem largeIconToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem smallIconToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detailToolStripMenuItem;
     }
 }
 

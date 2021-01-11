@@ -2434,18 +2434,18 @@ SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPric
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice" +
-                ", UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued FROM dbo.Products where" +
-                " UnitPrice between @UnitPrice1 and @UnitPrice2";
+            this._commandCollection[1].CommandText = "select * from Products as p\r\ninner join Categories as c\r\non p.CategoryID = c.Cate" +
+                "goryID\r\nwhere c.CategoryName= @CategoryName";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice1", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice2", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CategoryName", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "CategoryName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "select * from Products as p\r\ninner join Categories as c\r\non p.CategoryID = c.Cate" +
-                "goryID\r\nwhere c.CategoryName= @CategoryName";
+            this._commandCollection[2].CommandText = "SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice" +
+                ", UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued FROM dbo.Products where" +
+                " UnitPrice between @UnitPrice1 and @UnitPrice2";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CategoryName", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "CategoryName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice1", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UnitPrice2", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2476,56 +2476,8 @@ SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPric
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(NWDataSet1.ProductsDataTable dataTable, global::System.Nullable<decimal> UnitPrice1, global::System.Nullable<decimal> UnitPrice2) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((UnitPrice1.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(UnitPrice1.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((UnitPrice2.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(UnitPrice2.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual NWDataSet1.ProductsDataTable GetDataBy(global::System.Nullable<decimal> UnitPrice1, global::System.Nullable<decimal> UnitPrice2) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((UnitPrice1.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(UnitPrice1.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((UnitPrice2.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(UnitPrice2.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            NWDataSet1.ProductsDataTable dataTable = new NWDataSet1.ProductsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByCategory(NWDataSet1.ProductsDataTable dataTable, string CategoryName) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((CategoryName == null)) {
                 throw new global::System.ArgumentNullException("CategoryName");
             }
@@ -2544,12 +2496,60 @@ SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPric
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual NWDataSet1.ProductsDataTable GetDataByCategory(string CategoryName) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((CategoryName == null)) {
                 throw new global::System.ArgumentNullException("CategoryName");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(CategoryName));
+            }
+            NWDataSet1.ProductsDataTable dataTable = new NWDataSet1.ProductsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByDate(NWDataSet1.ProductsDataTable dataTable, global::System.Nullable<decimal> UnitPrice1, global::System.Nullable<decimal> UnitPrice2) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((UnitPrice1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(UnitPrice1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((UnitPrice2.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(UnitPrice2.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual NWDataSet1.ProductsDataTable GetDataByDate(global::System.Nullable<decimal> UnitPrice1, global::System.Nullable<decimal> UnitPrice2) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((UnitPrice1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(UnitPrice1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((UnitPrice2.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(UnitPrice2.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             NWDataSet1.ProductsDataTable dataTable = new NWDataSet1.ProductsDataTable();
             this.Adapter.Fill(dataTable);
