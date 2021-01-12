@@ -32,10 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Index));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnH1Discon = new System.Windows.Forms.Button();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.btnH1Con = new System.Windows.Forms.Button();
+            this.btnH1Discon = new System.Windows.Forms.Button();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -48,6 +50,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.cbbDisconnected = new System.Windows.Forms.ComboBox();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nwDataSet1 = new ADO.NET_Homework.NWDataSet1();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.listBox3 = new System.Windows.Forms.ListBox();
@@ -99,17 +103,37 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.productPhotoTableAdapter = new ADO.NET_Homework.AWDataSet1TableAdapters.ProductPhotoTableAdapter();
-            this.tableAdapterManager = new ADO.NET_Homework.AWDataSet1TableAdapters.TableAdapterManager();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
-            this.cbb6 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.cbb6 = new System.Windows.Forms.ComboBox();
             this.listView6 = new System.Windows.Forms.ListView();
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nwDataSet1 = new ADO.NET_Homework.NWDataSet1();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.splitContainer8 = new System.Windows.Forms.SplitContainer();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.splitContainer9 = new System.Windows.Forms.SplitContainer();
+            this.button2 = new System.Windows.Forms.Button();
+            this.h8_cbb = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.h8_flp2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.h8_btnDropTable = new System.Windows.Forms.Button();
+            this.h8_btnCreateTable = new System.Windows.Forms.Button();
+            this.h8_txtCategory = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.h8_btnInsert = new System.Windows.Forms.Button();
+            this.h8_btnBrowse = new System.Windows.Forms.Button();
+            this.h8_txtDesc = new System.Windows.Forms.TextBox();
+            this.h8_pbPicture = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.productPhotoTableAdapter = new ADO.NET_Homework.AWDataSet1TableAdapters.ProductPhotoTableAdapter();
+            this.tableAdapterManager = new ADO.NET_Homework.AWDataSet1TableAdapters.TableAdapterManager();
             this.categoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productsTableAdapter1 = new ADO.NET_Homework.NWDataSet1TableAdapters.ProductsTableAdapter();
             this.categoriesTableAdapter1 = new ADO.NET_Homework.NWDataSet1TableAdapters.CategoriesTableAdapter();
@@ -120,14 +144,25 @@
             this.largeIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smallIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.Panel2.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -154,21 +189,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.aWDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
-            this.splitContainer5.Panel1.SuspendLayout();
-            this.splitContainer5.Panel2.SuspendLayout();
-            this.splitContainer5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
-            this.splitContainer6.Panel1.SuspendLayout();
-            this.splitContainer6.Panel2.SuspendLayout();
-            this.splitContainer6.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
             this.splitContainer7.Panel1.SuspendLayout();
             this.splitContainer7.Panel2.SuspendLayout();
             this.splitContainer7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
+            this.splitContainer8.Panel1.SuspendLayout();
+            this.splitContainer8.Panel2.SuspendLayout();
+            this.splitContainer8.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).BeginInit();
+            this.splitContainer9.Panel1.SuspendLayout();
+            this.splitContainer9.Panel2.SuspendLayout();
+            this.splitContainer9.SuspendLayout();
+            this.tabPage12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.h8_pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).BeginInit();
             this.ctms.SuspendLayout();
             this.SuspendLayout();
@@ -181,6 +219,8 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -199,26 +239,34 @@
             this.tabPage1.Text = "Homework1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // splitContainer5
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 62;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(1070, 539);
-            this.dataGridView3.TabIndex = 8;
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer5.Name = "splitContainer5";
             // 
-            // listBox1
+            // splitContainer5.Panel1
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(0, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1070, 125);
-            this.listBox1.TabIndex = 7;
+            this.splitContainer5.Panel1.Controls.Add(this.btnH1Con);
+            this.splitContainer5.Panel1.Controls.Add(this.btnH1Discon);
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
+            this.splitContainer5.Size = new System.Drawing.Size(1269, 668);
+            this.splitContainer5.SplitterDistance = 195;
+            this.splitContainer5.TabIndex = 9;
+            // 
+            // btnH1Con
+            // 
+            this.btnH1Con.Location = new System.Drawing.Point(14, 18);
+            this.btnH1Con.Margin = new System.Windows.Forms.Padding(2);
+            this.btnH1Con.Name = "btnH1Con";
+            this.btnH1Con.Size = new System.Drawing.Size(163, 36);
+            this.btnH1Con.TabIndex = 5;
+            this.btnH1Con.Text = "Load DB Data - Connected";
+            this.btnH1Con.UseVisualStyleBackColor = true;
+            this.btnH1Con.Click += new System.EventHandler(this.btnH1Con_Click);
             // 
             // btnH1Discon
             // 
@@ -231,16 +279,44 @@
             this.btnH1Discon.UseVisualStyleBackColor = true;
             this.btnH1Discon.Click += new System.EventHandler(this.btnH1Discon_Click);
             // 
-            // btnH1Con
+            // splitContainer6
             // 
-            this.btnH1Con.Location = new System.Drawing.Point(14, 18);
-            this.btnH1Con.Margin = new System.Windows.Forms.Padding(2);
-            this.btnH1Con.Name = "btnH1Con";
-            this.btnH1Con.Size = new System.Drawing.Size(163, 36);
-            this.btnH1Con.TabIndex = 5;
-            this.btnH1Con.Text = "Load DB Data - Connected";
-            this.btnH1Con.UseVisualStyleBackColor = true;
-            this.btnH1Con.Click += new System.EventHandler(this.btnH1Con_Click);
+            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Name = "splitContainer6";
+            this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer6.Panel1
+            // 
+            this.splitContainer6.Panel1.Controls.Add(this.listBox1);
+            // 
+            // splitContainer6.Panel2
+            // 
+            this.splitContainer6.Panel2.Controls.Add(this.dataGridView3);
+            this.splitContainer6.Size = new System.Drawing.Size(1070, 668);
+            this.splitContainer6.SplitterDistance = 124;
+            this.splitContainer6.TabIndex = 0;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(1070, 124);
+            this.listBox1.TabIndex = 7;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(1070, 540);
+            this.dataGridView3.TabIndex = 8;
             // 
             // tabPage2
             // 
@@ -348,7 +424,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 778F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 790F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridView2, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.cbbDisconnected, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
@@ -370,22 +446,32 @@
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(474, 38);
+            this.dataGridView2.Location = new System.Drawing.Point(462, 38);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(772, 540);
+            this.dataGridView2.Size = new System.Drawing.Size(784, 540);
             this.dataGridView2.TabIndex = 19;
             // 
             // cbbDisconnected
             // 
             this.cbbDisconnected.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoriesBindingSource, "CategoryName", true));
             this.cbbDisconnected.FormattingEnabled = true;
-            this.cbbDisconnected.Location = new System.Drawing.Point(474, 6);
+            this.cbbDisconnected.Location = new System.Drawing.Point(462, 6);
             this.cbbDisconnected.Name = "cbbDisconnected";
             this.cbbDisconnected.Size = new System.Drawing.Size(121, 20);
             this.cbbDisconnected.TabIndex = 19;
             this.cbbDisconnected.SelectedIndexChanged += new System.EventHandler(this.cbbDisconnected_SelectedIndexChanged);
+            // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataMember = "Categories";
+            this.categoriesBindingSource.DataSource = this.nwDataSet1;
+            // 
+            // nwDataSet1
+            // 
+            this.nwDataSet1.DataSetName = "NWDataSet1";
+            this.nwDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -414,7 +500,7 @@
             this.listBox3.ItemHeight = 12;
             this.listBox3.Location = new System.Drawing.Point(96, 38);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(369, 540);
+            this.listBox3.Size = new System.Drawing.Size(357, 540);
             this.listBox3.TabIndex = 5;
             // 
             // cbbConnected
@@ -467,7 +553,7 @@
             this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
             // 
-            // 
+            // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.btnToGridView);
             this.splitContainer1.Panel1.Controls.Add(this.btnToListBox);
@@ -913,52 +999,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(108, 22);
             this.dateTimePicker1.TabIndex = 71;
             // 
-            // productPhotoTableAdapter
-            // 
-            this.productPhotoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ProductPhotoTableAdapter = this.productPhotoTableAdapter;
-            this.tableAdapterManager.UpdateOrder = ADO.NET_Homework.AWDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // splitContainer5
-            // 
-            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer5.Name = "splitContainer5";
-            // 
-            // splitContainer5.Panel1
-            // 
-            this.splitContainer5.Panel1.Controls.Add(this.btnH1Con);
-            this.splitContainer5.Panel1.Controls.Add(this.btnH1Discon);
-            // 
-            // splitContainer5.Panel2
-            // 
-            this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer5.Size = new System.Drawing.Size(1269, 668);
-            this.splitContainer5.SplitterDistance = 195;
-            this.splitContainer5.TabIndex = 9;
-            // 
-            // splitContainer6
-            // 
-            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer6.Name = "splitContainer6";
-            this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer6.Panel1
-            // 
-            this.splitContainer6.Panel1.Controls.Add(this.listBox1);
-            // 
-            // splitContainer6.Panel2
-            // 
-            this.splitContainer6.Panel2.Controls.Add(this.dataGridView3);
-            this.splitContainer6.Size = new System.Drawing.Size(1070, 668);
-            this.splitContainer6.SplitterDistance = 125;
-            this.splitContainer6.TabIndex = 0;
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.splitContainer7);
@@ -989,15 +1029,6 @@
             this.splitContainer7.SplitterDistance = 246;
             this.splitContainer7.TabIndex = 0;
             // 
-            // cbb6
-            // 
-            this.cbb6.FormattingEnabled = true;
-            this.cbb6.Location = new System.Drawing.Point(217, 62);
-            this.cbb6.Name = "cbb6";
-            this.cbb6.Size = new System.Drawing.Size(135, 20);
-            this.cbb6.TabIndex = 2;
-            this.cbb6.SelectedIndexChanged += new System.EventHandler(this.cbb6_SelectedIndexChanged);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -1006,6 +1037,15 @@
             this.label8.Size = new System.Drawing.Size(47, 12);
             this.label8.TabIndex = 3;
             this.label8.Text = "Country:";
+            // 
+            // cbb6
+            // 
+            this.cbb6.FormattingEnabled = true;
+            this.cbb6.Location = new System.Drawing.Point(217, 62);
+            this.cbb6.Name = "cbb6";
+            this.cbb6.Size = new System.Drawing.Size(135, 20);
+            this.cbb6.TabIndex = 2;
+            this.cbb6.SelectedIndexChanged += new System.EventHandler(this.cbb6_SelectedIndexChanged);
             // 
             // listView6
             // 
@@ -1017,15 +1057,277 @@
             this.listView6.TabIndex = 1;
             this.listView6.UseCompatibleStateImageBehavior = false;
             // 
-            // categoriesBindingSource
+            // tabPage7
             // 
-            this.categoriesBindingSource.DataMember = "Categories";
-            this.categoriesBindingSource.DataSource = this.nwDataSet1;
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1275, 674);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Homework7";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // nwDataSet1
+            // tabPage8
             // 
-            this.nwDataSet1.DataSetName = "NWDataSet1";
-            this.nwDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tabPage8.Controls.Add(this.splitContainer8);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(1275, 674);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Homework8";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer8
+            // 
+            this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer8.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer8.Name = "splitContainer8";
+            this.splitContainer8.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer8.Panel1
+            // 
+            this.splitContainer8.Panel1.Controls.Add(this.label9);
+            // 
+            // splitContainer8.Panel2
+            // 
+            this.splitContainer8.Panel2.Controls.Add(this.tabControl2);
+            this.splitContainer8.Size = new System.Drawing.Size(1275, 674);
+            this.splitContainer8.SplitterDistance = 67;
+            this.splitContainer8.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("微軟正黑體", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label9.Location = new System.Drawing.Point(573, 23);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(135, 31);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "My Album";
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage9);
+            this.tabControl2.Controls.Add(this.tabPage10);
+            this.tabControl2.Controls.Add(this.tabPage11);
+            this.tabControl2.Controls.Add(this.tabPage12);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1275, 603);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(1267, 577);
+            this.tabPage9.TabIndex = 0;
+            this.tabPage9.Text = "瀏覽相片";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.splitContainer9);
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(1267, 577);
+            this.tabPage10.TabIndex = 1;
+            this.tabPage10.Text = "新增相片管理";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer9
+            // 
+            this.splitContainer9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer9.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer9.Name = "splitContainer9";
+            this.splitContainer9.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer9.Panel1
+            // 
+            this.splitContainer9.Panel1.Controls.Add(this.button2);
+            this.splitContainer9.Panel1.Controls.Add(this.h8_cbb);
+            this.splitContainer9.Panel1.Controls.Add(this.label10);
+            // 
+            // splitContainer9.Panel2
+            // 
+            this.splitContainer9.Panel2.Controls.Add(this.h8_flp2);
+            this.splitContainer9.Size = new System.Drawing.Size(1261, 571);
+            this.splitContainer9.SplitterDistance = 75;
+            this.splitContainer9.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(56, 34);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Folder...";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // h8_cbb
+            // 
+            this.h8_cbb.FormattingEnabled = true;
+            this.h8_cbb.Location = new System.Drawing.Point(56, 8);
+            this.h8_cbb.Name = "h8_cbb";
+            this.h8_cbb.Size = new System.Drawing.Size(75, 20);
+            this.h8_cbb.TabIndex = 1;
+            this.h8_cbb.SelectedIndexChanged += new System.EventHandler(this.h8_cbb_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 12);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "分類";
+            // 
+            // h8_flp2
+            // 
+            this.h8_flp2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.h8_flp2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.h8_flp2.Location = new System.Drawing.Point(0, 0);
+            this.h8_flp2.Name = "h8_flp2";
+            this.h8_flp2.Size = new System.Drawing.Size(1261, 492);
+            this.h8_flp2.TabIndex = 0;
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(1267, 577);
+            this.tabPage11.TabIndex = 2;
+            this.tabPage11.Text = "Tool";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.h8_btnDropTable);
+            this.tabPage12.Controls.Add(this.h8_btnCreateTable);
+            this.tabPage12.Controls.Add(this.h8_txtCategory);
+            this.tabPage12.Controls.Add(this.label14);
+            this.tabPage12.Controls.Add(this.h8_btnInsert);
+            this.tabPage12.Controls.Add(this.h8_btnBrowse);
+            this.tabPage12.Controls.Add(this.h8_txtDesc);
+            this.tabPage12.Controls.Add(this.h8_pbPicture);
+            this.tabPage12.Controls.Add(this.label15);
+            this.tabPage12.Controls.Add(this.label16);
+            this.tabPage12.Location = new System.Drawing.Point(4, 22);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(1267, 577);
+            this.tabPage12.TabIndex = 3;
+            this.tabPage12.Text = "Insert Image";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // h8_btnDropTable
+            // 
+            this.h8_btnDropTable.Location = new System.Drawing.Point(462, 301);
+            this.h8_btnDropTable.Name = "h8_btnDropTable";
+            this.h8_btnDropTable.Size = new System.Drawing.Size(130, 23);
+            this.h8_btnDropTable.TabIndex = 23;
+            this.h8_btnDropTable.Text = "Drop [MyAlbum]";
+            this.h8_btnDropTable.UseVisualStyleBackColor = true;
+            this.h8_btnDropTable.Click += new System.EventHandler(this.h8_btnDropTable_Click);
+            // 
+            // h8_btnCreateTable
+            // 
+            this.h8_btnCreateTable.Location = new System.Drawing.Point(462, 261);
+            this.h8_btnCreateTable.Name = "h8_btnCreateTable";
+            this.h8_btnCreateTable.Size = new System.Drawing.Size(130, 23);
+            this.h8_btnCreateTable.TabIndex = 22;
+            this.h8_btnCreateTable.Text = "Create [MyAlbum]";
+            this.h8_btnCreateTable.UseVisualStyleBackColor = true;
+            this.h8_btnCreateTable.Click += new System.EventHandler(this.h8_btnCreateTable_Click);
+            // 
+            // h8_txtCategory
+            // 
+            this.h8_txtCategory.Location = new System.Drawing.Point(112, 218);
+            this.h8_txtCategory.Multiline = true;
+            this.h8_txtCategory.Name = "h8_txtCategory";
+            this.h8_txtCategory.Size = new System.Drawing.Size(136, 37);
+            this.h8_txtCategory.TabIndex = 21;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(43, 221);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(51, 12);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Category:";
+            // 
+            // h8_btnInsert
+            // 
+            this.h8_btnInsert.Location = new System.Drawing.Point(280, 301);
+            this.h8_btnInsert.Name = "h8_btnInsert";
+            this.h8_btnInsert.Size = new System.Drawing.Size(83, 23);
+            this.h8_btnInsert.TabIndex = 19;
+            this.h8_btnInsert.Text = "Insert to DB";
+            this.h8_btnInsert.UseVisualStyleBackColor = true;
+            this.h8_btnInsert.Click += new System.EventHandler(this.h8_btnInsert_Click);
+            // 
+            // h8_btnBrowse
+            // 
+            this.h8_btnBrowse.Location = new System.Drawing.Point(280, 261);
+            this.h8_btnBrowse.Name = "h8_btnBrowse";
+            this.h8_btnBrowse.Size = new System.Drawing.Size(75, 23);
+            this.h8_btnBrowse.TabIndex = 18;
+            this.h8_btnBrowse.Text = "Browse...";
+            this.h8_btnBrowse.UseVisualStyleBackColor = true;
+            this.h8_btnBrowse.Click += new System.EventHandler(this.h8_btnBrowse_Click);
+            // 
+            // h8_txtDesc
+            // 
+            this.h8_txtDesc.Location = new System.Drawing.Point(111, 26);
+            this.h8_txtDesc.Multiline = true;
+            this.h8_txtDesc.Name = "h8_txtDesc";
+            this.h8_txtDesc.Size = new System.Drawing.Size(136, 37);
+            this.h8_txtDesc.TabIndex = 17;
+            // 
+            // h8_pbPicture
+            // 
+            this.h8_pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.h8_pbPicture.Location = new System.Drawing.Point(112, 93);
+            this.h8_pbPicture.Name = "h8_pbPicture";
+            this.h8_pbPicture.Size = new System.Drawing.Size(150, 76);
+            this.h8_pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.h8_pbPicture.TabIndex = 16;
+            this.h8_pbPicture.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(45, 93);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 12);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Picture:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(43, 29);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(30, 12);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "Desc:";
+            // 
+            // productPhotoTableAdapter
+            // 
+            this.productPhotoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ProductPhotoTableAdapter = this.productPhotoTableAdapter;
+            this.tableAdapterManager.UpdateOrder = ADO.NET_Homework.AWDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // categoriesBindingSource1
             // 
@@ -1099,28 +1401,32 @@
             this.smallIconToolStripMenuItem,
             this.detailToolStripMenuItem});
             this.ctms.Name = "ctms";
-            this.ctms.Size = new System.Drawing.Size(181, 92);
+            this.ctms.Size = new System.Drawing.Size(131, 70);
             // 
             // largeIconToolStripMenuItem
             // 
             this.largeIconToolStripMenuItem.Name = "largeIconToolStripMenuItem";
-            this.largeIconToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.largeIconToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.largeIconToolStripMenuItem.Text = "LargeIcon";
             this.largeIconToolStripMenuItem.Click += new System.EventHandler(this.largeIconToolStripMenuItem_Click);
             // 
             // smallIconToolStripMenuItem
             // 
             this.smallIconToolStripMenuItem.Name = "smallIconToolStripMenuItem";
-            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.smallIconToolStripMenuItem.Text = "SmallIcon";
             this.smallIconToolStripMenuItem.Click += new System.EventHandler(this.smallIconToolStripMenuItem_Click);
             // 
             // detailToolStripMenuItem
             // 
             this.detailToolStripMenuItem.Name = "detailToolStripMenuItem";
-            this.detailToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detailToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.detailToolStripMenuItem.Text = "Detail";
             this.detailToolStripMenuItem.Click += new System.EventHandler(this.detailToolStripMenuItem_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Frm_Index
             // 
@@ -1133,6 +1439,14 @@
             this.Load += new System.EventHandler(this.Frm_Index_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
+            this.splitContainer5.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -1141,6 +1455,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -1169,22 +1485,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            this.splitContainer5.Panel1.ResumeLayout(false);
-            this.splitContainer5.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
-            this.splitContainer5.ResumeLayout(false);
-            this.splitContainer6.Panel1.ResumeLayout(false);
-            this.splitContainer6.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
-            this.splitContainer6.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.splitContainer7.Panel1.ResumeLayout(false);
             this.splitContainer7.Panel1.PerformLayout();
             this.splitContainer7.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
             this.splitContainer7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            this.splitContainer8.Panel1.ResumeLayout(false);
+            this.splitContainer8.Panel1.PerformLayout();
+            this.splitContainer8.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).EndInit();
+            this.splitContainer8.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage10.ResumeLayout(false);
+            this.splitContainer9.Panel1.ResumeLayout(false);
+            this.splitContainer9.Panel1.PerformLayout();
+            this.splitContainer9.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
+            this.splitContainer9.ResumeLayout(false);
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.h8_pbPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).EndInit();
             this.ctms.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1283,6 +1605,31 @@
         private System.Windows.Forms.ToolStripMenuItem largeIconToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem smallIconToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detailToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.SplitContainer splitContainer8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.SplitContainer splitContainer9;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox h8_cbb;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.FlowLayoutPanel h8_flp2;
+        private System.Windows.Forms.TabPage tabPage12;
+        private System.Windows.Forms.TextBox h8_txtCategory;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button h8_btnInsert;
+        private System.Windows.Forms.Button h8_btnBrowse;
+        private System.Windows.Forms.TextBox h8_txtDesc;
+        private System.Windows.Forms.PictureBox h8_pbPicture;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button h8_btnCreateTable;
+        private System.Windows.Forms.Button h8_btnDropTable;
     }
 }
 

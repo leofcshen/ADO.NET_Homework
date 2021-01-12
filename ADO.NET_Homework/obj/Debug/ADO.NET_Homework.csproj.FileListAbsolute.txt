@@ -39,3 +39,6 @@ D:\Code\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.cspr
 D:\Code\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.exe
 D:\Code\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.pdb
 D:\Code\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET.FrmImageFlags.resources
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET.FrmImageFlags.resources
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\Database1.mdf
+D:\Github\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\Database1_log.ldf

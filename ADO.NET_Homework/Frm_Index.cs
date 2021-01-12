@@ -14,11 +14,15 @@ namespace ADO.NET_Homework
 {
     public partial class Frm_Index : Form
     {
+
         public Frm_Index()
         {
             InitializeComponent();
+            //Settings.Default.myNorthwind = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
+            //Settings.Default.myAdventureWorks = @"Data Source=.\SQLEXPRESS;Initial Catalog=AdventureWorks;Integrated Security=True";
 
-            this.tabControl1.SelectedIndex = 5; //預設tabControl 之 Index
+            this.tabControl1.SelectedIndex = 7; //預設tabControl 之 Index
+            this.tabControl2.SelectedIndex = 3;
             this.categoriesTableAdapter1.Fill(this.nwDataSet1.Categories);
             this.productsTableAdapter1.Fill(this.nwDataSet1.Products);
             this.customersTableAdapter1.Fill(this.nwDataSet1.Customers);
@@ -26,8 +30,80 @@ namespace ADO.NET_Homework
             
             LoadCountryToComboBox();
             CreateListViewColumnHeader();
-            Closing += new CancelEventHandler(Frm_Index_Closing);
+            LoadAlbumCountry();
+            this.h8_flp2.AllowDrop = true;
+            this.h8_flp2.DragEnter += H8_flp2_DragEnter;
+            this.h8_flp2.DragDrop += H8_flp2_DragDrop;
+            //Closing += new CancelEventHandler(Frm_Index_Closing);
         }
+
+        private void H8_flp2_DragDrop(object sender, DragEventArgs e)
+        {
+            try
+            {
+                //string[] filenames = (string[])e.Data.GetData(DataFormats.FileDrop);
+                //using (SqlConnection conn = new SqlConnection(Settings.Default.myLocalDB))
+                //{
+                //    SqlCommand comm = new SqlCommand();
+                //    comm.Connection = conn;
+                //    for (int i = 0; i <= filenames.Length - 1; i++)
+                //    {
+                //        Image image = Image.FromFile(filenames[i]);                        
+                //        PictureBox pb = new PictureBox();
+                //        MessageBox.Show(filenames[i].ToString());
+                //        pb.Image = Image.FromFile(filenames[i]);
+                //        pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                //        this.h8_flp2.Controls.Add(pb);
+
+                //        System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                //        pb.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                //        byte[] bytes= ms.GetBuffer();
+                //        comm.CommandText = "Insert into MyAlbum (Description, Image, Category) values (@Desc, @Image, @Category)";
+                //        comm.Parameters.Add("@Desc", SqlDbType.Text).Value = "";
+                //        comm.Parameters.Add("@Image", SqlDbType.Image).Value = bytes;
+                //        comm.Parameters.Add("@Category", SqlDbType.NVarChar, 20).Value = this.h8_cbb.Text;                        
+                //        conn.Open();
+                //        comm.ExecuteNonQuery();
+                //    }
+                //}
+                string[] filenames = (string[])e.Data.GetData(DataFormats.FileDrop);                
+                for (int i = 0; i <= filenames.Length - 1; i++)
+                {
+                    Image image = Image.FromFile(filenames[i]);
+                    PictureBox pb = new PictureBox();
+                    MessageBox.Show(filenames[i].ToString());
+                    pb.Image = Image.FromFile(filenames[i]);
+                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pb.Size = new System.Drawing.Size(340, 140);
+                    this.h8_flp2.Controls.Add(pb);
+                    SqlCommand comm = new SqlCommand();
+                        
+                    using (SqlConnection conn = new SqlConnection(Settings.Default.myLocalDB))
+                    {
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                        pb.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        byte[] bytes = ms.GetBuffer();
+                        comm.CommandText = "Insert into MyAlbum (Description, Image, Category) values (@Desc, @Image, @Category)";
+                        comm.Parameters.Add("@Desc", SqlDbType.Text).Value = "";
+                        comm.Parameters.Add("@Image", SqlDbType.Image).Value = bytes;
+                        comm.Parameters.Add("@Category", SqlDbType.NVarChar, 20).Value = this.h8_cbb.Text;
+                        comm.Connection = conn;
+                        conn.Open();
+                        comm.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void H8_flp2_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
         void Frm_Index_Closing(object sender, CancelEventArgs e)
         {
             //MessageBox.Show("Closing event\n");
@@ -48,7 +124,7 @@ namespace ADO.NET_Homework
             try
             {
                 //using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True"))
-                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                using (SqlConnection conn = new SqlConnection(Settings.Default.myNorthwind))
                 {
                     conn.Open();
                     SqlCommand comm = new SqlCommand("select * from Customers", conn);
@@ -69,7 +145,7 @@ namespace ADO.NET_Homework
             try
             {
                 //SqlConnection conn = new SqlConnection("Data Source =.; Initial Catalog = Northwind; Integrated Security = True");
-                SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString);
+                SqlConnection conn = new SqlConnection(Settings.Default.myNorthwind);
                 SqlDataAdapter adapter = new SqlDataAdapter("select * from Customers", conn);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
@@ -107,7 +183,7 @@ namespace ADO.NET_Homework
             {
                 cbbConnected.Items.Clear();
                 //con = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
-                conn = new SqlConnection(Settings.Default.NorthwindConnectionString);
+                conn = new SqlConnection(Settings.Default.myNorthwind);
                 conn.Open();
                 SqlCommand com = new SqlCommand("select CategoryName from Categories", conn);
                 SqlDataReader datareader = com.ExecuteReader();
@@ -131,7 +207,7 @@ namespace ADO.NET_Homework
             try
             {
                 //SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
-                SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString);
+                SqlConnection conn = new SqlConnection(Settings.Default.myNorthwind);
                 SqlDataAdapter adp = new SqlDataAdapter("SELECT CategoryName from Categories", conn);
                 DataSet ds = new DataSet();
                 adp.Fill(ds, "CategoryName");
@@ -150,7 +226,7 @@ namespace ADO.NET_Homework
             try
             {                
                 //using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True"))
-                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                using (SqlConnection conn = new SqlConnection(Settings.Default.myNorthwind))
                 {
                     string s = cbbConnected.Text;
                     conn.Open();
@@ -178,7 +254,7 @@ namespace ADO.NET_Homework
         //Homework4
         private void btnToGridView_Click(object sender, EventArgs e)
         {
-            string connStr = Settings.Default.NorthwindConnectionString;
+            string connStr = Settings.Default.myNorthwind;
             //SqlConnection conn = new SqlConnection("Data Source =.; Initial Catalog = Northwind; Integrated Security = True");
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = connStr;
@@ -266,7 +342,7 @@ namespace ADO.NET_Homework
             this.bindingNavigator1.BindingSource = this.bs;
 
             SqlConnection conn = null;
-            string connStr = Settings.Default.AdventureWorksConnectionString;
+            string connStr = Settings.Default.myAdventureWorks;
             try
             {
                 conn = new SqlConnection();
@@ -323,7 +399,7 @@ namespace ADO.NET_Homework
         {
             try
             {
-                string connString = Settings.Default.NorthwindConnectionString;
+                string connString = Settings.Default.myNorthwind;
                 using (SqlConnection conn = new SqlConnection())
                 {
                     conn.ConnectionString = connString;
@@ -351,7 +427,7 @@ namespace ADO.NET_Homework
             listView6.ContextMenuStrip = ctms;
             listView6.LargeImageList = ImageList1;
             listView6.SmallImageList = ImageList2;
-            string connString = Settings.Default.NorthwindConnectionString;
+            string connString = Settings.Default.myNorthwind;
             using (SqlConnection conn = new SqlConnection())
             {
                 conn.ConnectionString = connString;
@@ -373,7 +449,7 @@ namespace ADO.NET_Homework
         {
             try
             {
-                string connString = Settings.Default.NorthwindConnectionString;
+                string connString = Settings.Default.myNorthwind;
                 using (SqlConnection conn = new SqlConnection())
                 {
                     listView6.Groups.Clear();
@@ -446,6 +522,178 @@ namespace ADO.NET_Homework
         private void detailToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.listView6.View = View.Details;
+        }
+        #region Homework8
+        private void h8_btnBrowse_Click(object sender, EventArgs e)
+        {
+            if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+                this.h8_pbPicture.Image = Image.FromFile(this.openFileDialog1.FileName);
+        }
+        
+
+        private void h8_btnInsert_Click(object sender, EventArgs e)
+        {            
+            try
+            {
+                string connString = Settings.Default.myLocalDB;
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    //conn.ConnectionString = connString;
+                    SqlCommand comm = new SqlCommand();
+                    comm.CommandText = $"Insert into MyAlbum (Description, Image, Category) values (@Desc, @Image, @Category)";
+                    comm.Connection = conn;
+                    //圖片資料
+                    byte[] bytes = { 1, 3 };
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                    if (this.h8_pbPicture.Image == null)
+                    {
+                        MessageBox.Show("請選擇圖片");
+                        return;
+                    }
+                    this.h8_pbPicture.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    bytes = ms.GetBuffer();
+                    //代入參數
+                    comm.Parameters.Add("@Desc", SqlDbType.Text).Value = this.h8_txtDesc.Text;
+                    comm.Parameters.Add("@Image", SqlDbType.Image).Value = bytes;
+                    comm.Parameters.Add("@Category", SqlDbType.NVarChar, 20).Value = (this.h8_txtCategory.Text == "") ? null : this.h8_txtCategory.Text;
+
+                    conn.Open();
+                    comm.ExecuteNonQuery();
+                    MessageBox.Show("Insert image Successfully");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void CreateMyAlbum()
+        {
+            try
+            {
+                string connString = Settings.Default.myLocalDB;
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    SqlCommand comm = new SqlCommand();
+                    //comm.CommandText = "IF EXISTS(SELECT* FROM sys.tables WHERE name = 'MyAlbum)";
+                    comm.CommandText =
+                        "IF NOT EXISTS(SELECT* FROM sys.tables WHERE name = 'MyAlbum')"+
+                        "CREATE TABLE[dbo].[MyAlbum](" +
+                        "[Id] INT IDENTITY(1, 1) NOT NULL," +
+                        "[Description] TEXT NULL," +
+                        "[Image] IMAGE NULL," +
+                        "[Category] NVARCHAR(20) NOT NULL," +
+                        "PRIMARY KEY CLUSTERED([Id] ASC)" +
+                        "); ";
+                    comm.Connection = conn;
+                                        
+                    conn.Open();
+                    comm.ExecuteNonQuery();
+                    MessageBox.Show("Create Table[MyAlbum] Successfully");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void h8_btnDropTable_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string connString = Settings.Default.myLocalDB;
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    SqlCommand comm = new SqlCommand();
+                    comm.CommandText =
+                        "IF EXISTS(SELECT* FROM sys.tables WHERE name = 'MyAlbum')" +
+                        "Drop table MyAlbum;";
+                    comm.Connection = conn;
+
+                    conn.Open();
+                    comm.ExecuteNonQuery();
+                    MessageBox.Show("Drop Table[MyAlbum] Successfully");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+
+        private void h8_btnCreateTable_Click(object sender, EventArgs e)
+        {
+            CreateMyAlbum();
+        }
+        private void LoadAlbumCountry()
+        {
+            try
+            {
+                string connString = Settings.Default.myLocalDB;
+                using (SqlConnection conn = new SqlConnection())
+                {
+                    conn.ConnectionString = connString;
+                    conn.Open();
+                    SqlCommand command = null;
+                    command = new SqlCommand("Select distinct Category from MyAlbum", conn);
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    this.h8_cbb.Items.Clear();                    
+                    while (dataReader.Read())
+                    {
+                        this.h8_cbb.Items.Add(dataReader["Category"]);
+                    }
+                    this.h8_cbb.SelectedIndex = 0;
+                } //Auton conn.close(); conn.Dispose()
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        #endregion
+
+        private void h8_cbb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.h8_flp2.Controls.Clear();
+                using (SqlConnection conn = new SqlConnection(Settings.Default.myLocalDB))
+                {
+                    string category = h8_cbb.Text;
+                    SqlCommand command = new SqlCommand($"Select * from MyAlbum where Category = '{category}'", conn);
+                    conn.Open();
+                    SqlDataReader dr = command.ExecuteReader();                    
+                    while (dr.Read())
+                    {
+                        byte[] bytes = (byte[])dr["Image"];
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes);
+                        PictureBox pb = new PictureBox();
+                        pb.Image = Image.FromStream(ms);
+                        pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                        pb.Size = new System.Drawing.Size(340, 140);
+
+                        this.h8_flp2.Controls.Add(pb);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
