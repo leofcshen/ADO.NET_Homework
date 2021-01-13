@@ -20,6 +20,10 @@ namespace ADO.NET_Homework
             this.tsBtn1.Text = "TreeView";//修改按鈕文字
             this.tsBtn2.Text = "ListView";//修改按鈕文字
             this.label1.Text = "";
+	    this.customersTableAdapter1.Fill(this.nwDataSet1.Customers);
+            this.bindingSource1.DataSource = this.nwDataSet1.Customers;
+            this.customersDataGridView.DataSource = this.bindingSource1;
+            this.bindingNavigator1.BindingSource = this.bindingSource1;
         }
         private void Exam_Load(object sender, EventArgs e)//倒資料
         {
