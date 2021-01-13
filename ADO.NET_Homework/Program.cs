@@ -16,7 +16,8 @@ namespace ADO.NET_Homework
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Index());
+            //Application.Run(new Frm_Index());
+            Application.Run(new Exam());
         }
     }
 }

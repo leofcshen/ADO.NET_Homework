@@ -145,6 +145,8 @@
             this.smallIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.productPhotoTableAdapter1 = new ADO.NET_Homework.AWDataSet1TableAdapters.ProductPhotoTableAdapter();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
@@ -221,6 +223,7 @@
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage13);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -424,7 +427,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 790F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 799F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridView2, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.cbbDisconnected, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
@@ -446,18 +449,18 @@
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(462, 38);
+            this.dataGridView2.Location = new System.Drawing.Point(453, 38);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(784, 540);
+            this.dataGridView2.Size = new System.Drawing.Size(793, 540);
             this.dataGridView2.TabIndex = 19;
             // 
             // cbbDisconnected
             // 
             this.cbbDisconnected.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.categoriesBindingSource, "CategoryName", true));
             this.cbbDisconnected.FormattingEnabled = true;
-            this.cbbDisconnected.Location = new System.Drawing.Point(462, 6);
+            this.cbbDisconnected.Location = new System.Drawing.Point(453, 6);
             this.cbbDisconnected.Name = "cbbDisconnected";
             this.cbbDisconnected.Size = new System.Drawing.Size(121, 20);
             this.cbbDisconnected.TabIndex = 19;
@@ -500,7 +503,7 @@
             this.listBox3.ItemHeight = 12;
             this.listBox3.Location = new System.Drawing.Point(96, 38);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(357, 540);
+            this.listBox3.Size = new System.Drawing.Size(348, 540);
             this.listBox3.TabIndex = 5;
             // 
             // cbbConnected
@@ -1428,6 +1431,20 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // productPhotoTableAdapter1
+            // 
+            this.productPhotoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(1275, 674);
+            this.tabPage13.TabIndex = 8;
+            this.tabPage13.Text = "Exam";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
             // Frm_Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1630,6 +1647,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button h8_btnCreateTable;
         private System.Windows.Forms.Button h8_btnDropTable;
+        private AWDataSet1TableAdapters.ProductPhotoTableAdapter productPhotoTableAdapter1;
+        private System.Windows.Forms.TabPage tabPage13;
     }
 }
 

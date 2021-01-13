@@ -14,7 +14,6 @@ namespace ADO.NET_Homework
 {
     public partial class Frm_Index : Form
     {
-
         public Frm_Index()
         {
             InitializeComponent();
@@ -695,5 +694,7 @@ namespace ADO.NET_Homework
                 MessageBox.Show(ex.Message);
             }
         }
+
+        
     }
 }
