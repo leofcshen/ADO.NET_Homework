@@ -17,6 +17,8 @@ namespace ADO.NET_Homework
         public Frm_Index()
         {
             InitializeComponent();
+            Settings.Default.NorthwindConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
+            Settings.Default.AdventureWorksConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=AdventureWorks;Integrated Security=True";
             //Settings.Default.myNorthwind = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
             //Settings.Default.myAdventureWorks = @"Data Source=.\SQLEXPRESS;Initial Catalog=AdventureWorks;Integrated Security=True";
 
@@ -33,7 +35,26 @@ namespace ADO.NET_Homework
             this.h8_flp2.AllowDrop = true;
             this.h8_flp2.DragEnter += H8_flp2_DragEnter;
             this.h8_flp2.DragDrop += H8_flp2_DragDrop;
+            this.tabControl1.SelectedIndexChanged += new EventHandler(tabControl1_SelectedIndexChanged);
             //Closing += new CancelEventHandler(Frm_Index_Closing);
+        }
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            #region 方法3
+            Action action = (this.tabControl1.SelectedIndex == 8) ? new Action(() => { Exam exam = new Exam();exam.Show(); }) : new Action(() => { return; });
+            action();
+            #endregion
+            #region 方法2
+            //Exam exam = (this.tabControl1.SelectedIndex == 8) ? new Exam() : null;
+            //if (exam != null) exam.Show();
+            #endregion
+            #region 方法1
+            //if (this.tabControl1.SelectedIndex == 8)
+            //{
+            //    Exam exam = new Exam();
+            //    exam.Show();
+            //}
+            #endregion
         }
 
         private void H8_flp2_DragDrop(object sender, DragEventArgs e)
@@ -106,16 +127,17 @@ namespace ADO.NET_Homework
         void Frm_Index_Closing(object sender, CancelEventArgs e)
         {
             //MessageBox.Show("Closing event\n");
-            DialogResult dr = MessageBox.Show("確定要關閉程式嗎?", "Closing event!", MessageBoxButtons.YesNo);
-            //way3
+            DialogResult dr = MessageBox.Show("確定要關閉程式嗎?", "Closing event!", MessageBoxButtons.YesNo);            
             e.Cancel = (dr == DialogResult.No);
-            //way2
+            #region Way2
             //e.Cancel = (dr == DialogResult.No) ? true : false;
-            //way1
+            #endregion
+            #region Way1
             //if (dr == DialogResult.No)
             //    e.Cancel = true;//取消離開
             //else
             //    e.Cancel = false;
+            #endregion
         }
         //Homework1
         private void btnH1Con_Click(object sender, EventArgs e)
@@ -123,7 +145,7 @@ namespace ADO.NET_Homework
             try
             {
                 //using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True"))
-                using (SqlConnection conn = new SqlConnection(Settings.Default.myNorthwind))
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
                 {
                     conn.Open();
                     SqlCommand comm = new SqlCommand("select * from Customers", conn);
@@ -144,7 +166,7 @@ namespace ADO.NET_Homework
             try
             {
                 //SqlConnection conn = new SqlConnection("Data Source =.; Initial Catalog = Northwind; Integrated Security = True");
-                SqlConnection conn = new SqlConnection(Settings.Default.myNorthwind);
+                SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString);
                 SqlDataAdapter adapter = new SqlDataAdapter("select * from Customers", conn);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
@@ -182,7 +204,7 @@ namespace ADO.NET_Homework
             {
                 cbbConnected.Items.Clear();
                 //con = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
-                conn = new SqlConnection(Settings.Default.myNorthwind);
+                conn = new SqlConnection(Settings.Default.NorthwindConnectionString);
                 conn.Open();
                 SqlCommand com = new SqlCommand("select CategoryName from Categories", conn);
                 SqlDataReader datareader = com.ExecuteReader();
@@ -206,7 +228,7 @@ namespace ADO.NET_Homework
             try
             {
                 //SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
-                SqlConnection conn = new SqlConnection(Settings.Default.myNorthwind);
+                SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString);
                 SqlDataAdapter adp = new SqlDataAdapter("SELECT CategoryName from Categories", conn);
                 DataSet ds = new DataSet();
                 adp.Fill(ds, "CategoryName");
@@ -225,7 +247,7 @@ namespace ADO.NET_Homework
             try
             {                
                 //using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True"))
-                using (SqlConnection conn = new SqlConnection(Settings.Default.myNorthwind))
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
                 {
                     string s = cbbConnected.Text;
                     conn.Open();
@@ -253,7 +275,7 @@ namespace ADO.NET_Homework
         //Homework4
         private void btnToGridView_Click(object sender, EventArgs e)
         {
-            string connStr = Settings.Default.myNorthwind;
+            string connStr = Settings.Default.NorthwindConnectionString;
             //SqlConnection conn = new SqlConnection("Data Source =.; Initial Catalog = Northwind; Integrated Security = True");
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = connStr;
@@ -288,22 +310,23 @@ namespace ADO.NET_Homework
                 arrayColumn = new int[dt.Columns.Count];//依 table 欄位數宣告 array 長度
                 for (int column = 0; column <= dt.Columns.Count - 1; column++)//計算欄位名稱最長字數
                 {
-                    //way2
-                    arrayColumn[column] = (dt.Columns[column].ColumnName.Length > arrayColumn[column]) ? dt.Columns[column].ColumnName.Length : arrayColumn[column];
-                    //way1
+                    
+                    arrayColumn[column] = (dt.Columns[column].ColumnName.Length > arrayColumn[column]) ? dt.Columns[column].ColumnName.Length : arrayColumn[column];                    
+                    #region Way1
                     //if (dt.Columns[column].ColumnName.Length > arrayColumn[column])
                     //    arrayColumn[column] = dt.Columns[column].ColumnName.Length;
+                    #endregion
                 }
                 for (int row = 0; row <= dt.Rows.Count - 1; row++)//計算欄位資料最長字數
                 {
                     for (int j = 0; j <= dt.Columns.Count - 1; j++)
-                    {
-                        //way2
+                    {                        
                         arrayColumn[j] = (dt.Rows[row][j].ToString().Length > arrayColumn[j]) ? dt.Rows[row][j].ToString().Length : arrayColumn[j];
-                        //way1
+                        #region Way1
                         //if (dt.Rows[row][j].ToString().Length > arrayColumn[j])
                         //    arrayColumn[j] = dt.Rows[row][j].ToString().Length;
-                    }                    
+                        #endregion
+                    }
                 }                
                 //開印
                 string s = "";
@@ -341,7 +364,7 @@ namespace ADO.NET_Homework
             this.bindingNavigator1.BindingSource = this.bs;
 
             SqlConnection conn = null;
-            string connStr = Settings.Default.myAdventureWorks;
+            string connStr = Settings.Default.AdventureWorksConnectionString;
             try
             {
                 conn = new SqlConnection();
@@ -398,7 +421,7 @@ namespace ADO.NET_Homework
         {
             try
             {
-                string connString = Settings.Default.myNorthwind;
+                string connString = Settings.Default.NorthwindConnectionString;
                 using (SqlConnection conn = new SqlConnection())
                 {
                     conn.ConnectionString = connString;
@@ -426,7 +449,7 @@ namespace ADO.NET_Homework
             listView6.ContextMenuStrip = ctms;
             listView6.LargeImageList = ImageList1;
             listView6.SmallImageList = ImageList2;
-            string connString = Settings.Default.myNorthwind;
+            string connString = Settings.Default.NorthwindConnectionString;
             using (SqlConnection conn = new SqlConnection())
             {
                 conn.ConnectionString = connString;
@@ -448,7 +471,7 @@ namespace ADO.NET_Homework
         {
             try
             {
-                string connString = Settings.Default.myNorthwind;
+                string connString = Settings.Default.NorthwindConnectionString;
                 using (SqlConnection conn = new SqlConnection())
                 {
                     listView6.Groups.Clear();

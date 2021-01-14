@@ -43,3 +43,6 @@ D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET.FrmImageFlags.reso
 D:\Github\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\Database1.mdf
 D:\Github\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\Database1_log.ldf
 D:\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.Exam.resources
+D:\Code\Github\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\Database1.mdf
+D:\Code\Github\ADO.NET_Homework\ADO.NET_Homework\bin\Debug\Database1_log.ldf
+D:\Code\Github\ADO.NET_Homework\ADO.NET_Homework\obj\Debug\ADO.NET_Homework.Exam.resources

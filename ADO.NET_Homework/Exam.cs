@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADO.NET_Homework.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,16 +15,19 @@ namespace ADO.NET_Homework
     {
         public Exam()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            Settings.Default.NorthwindConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
+            Settings.Default.AdventureWorksConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
+
             this.tsBtn1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;//修改按鈕顯示圖片變為文字
             this.tsBtn2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;//修改按鈕顯示圖片變為文字
             this.tsBtn1.Text = "TreeView";//修改按鈕文字
             this.tsBtn2.Text = "ListView";//修改按鈕文字
             this.label1.Text = "";
-	    this.customersTableAdapter1.Fill(this.nwDataSet1.Customers);
-            this.bindingSource1.DataSource = this.nwDataSet1.Customers;
-            this.customersDataGridView.DataSource = this.bindingSource1;
-            this.bindingNavigator1.BindingSource = this.bindingSource1;
+            //this.customersTableAdapter1.Fill(this.nwDataSet1.Customers);
+            //this.bindingSource1.DataSource = this.nwDataSet1.Customers;
+            //this.customersDataGridView.DataSource = this.bindingSource1;
+            //this.bindingNavigator1.BindingSource = this.bindingSource1;
         }
         private void Exam_Load(object sender, EventArgs e)//倒資料
         {
@@ -32,28 +36,29 @@ namespace ADO.NET_Homework
             //this.pictureBox1.Image = bit;
         }
 
-        private void tsBtn1_Click(object sender, EventArgs e)//TreeView 按鈕
+        private void tsBtn1_Click(object sender, EventArgs e)// TreeView 按鈕
         {
-            treeView1.Nodes.Clear();//清空 TreeView
+            treeView1.Nodes.Clear();// 清空 TreeView
             for (int i = 0; i <= nwDataSet1.Customers.Rows.Count - 1; i++)
             {
                 string country = nwDataSet1.Customers[i].Country;
                 string city = nwDataSet1.Customers[i].City;
                 
-                TreeNode treeNode1 = treeView1.Nodes[country];//找第一層節點
-                if (treeNode1 == null)//如果該國家節點不存在就新增
+                TreeNode treeNode1 = treeView1.Nodes[country];// 找第一層節點
+                if (treeNode1 == null)// 如果該國家節點不存在就新增
                 {
                     treeNode1 = treeView1.Nodes.Add(country, country);
                     treeNode1.Tag = 0;// Country 起始人數                    
                 }
 
-                TreeNode treeNode2 = treeView1.Nodes[country].Nodes[city];//找第二層節點
-                if (treeNode2 == null)//如果該城市節點不存在就新增
+                TreeNode treeNode2 = treeView1.Nodes[country].Nodes[city];//找第二層節點                                
+                if (treeNode2 == null)// 如果該城市節點不存在就新增
                 {
                     treeNode2 = treeNode1.Nodes.Add(city, city);
                     treeNode2.Tag = 0;// City 起始人數
                 }
-                treeNode1.Tag = (int)treeNode1.Tag + 1;//累加 Country人數
+                
+                treeNode1.Tag = (int)treeNode1.Tag + 1;//累加 Country 人數
                 treeNode2.Tag = (int)treeNode2.Tag + 1;//累加 City 人數
                 treeNode1.Text = $"{country} ({treeNode1.Tag} Customers)";
                 treeNode2.Text = $"{city} ({treeNode2.Tag} Customers)";
@@ -91,7 +96,7 @@ namespace ADO.NET_Homework
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (e.Node.Level != 0)//測試是否主節點 Country
+            if (e.Node.Level != 0)//測試是否為主節點 Country
             {
                 string nodeStr = e.Node.Text;                
                 nodeStr = nodeStr.Substring(0, nodeStr.IndexOf("(") - 1);//處理節點文字到剩 City
