@@ -17,8 +17,8 @@ namespace ADO.NET_Homework
         public Frm_Index()
         {
             InitializeComponent();
-            Settings.Default.NorthwindConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
-            Settings.Default.AdventureWorksConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=AdventureWorks;Integrated Security=True";
+            //Settings.Default.NorthwindConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
+            //Settings.Default.AdventureWorksConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=AdventureWorks;Integrated Security=True";
             //Settings.Default.myNorthwind = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
             //Settings.Default.myAdventureWorks = @"Data Source=.\SQLEXPRESS;Initial Catalog=AdventureWorks;Integrated Security=True";
 
@@ -40,10 +40,8 @@ namespace ADO.NET_Homework
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            #region 方法3
             Action action = (this.tabControl1.SelectedIndex == 8) ? new Action(() => { Exam exam = new Exam();exam.Show(); }) : new Action(() => { return; });
-            action();
-            #endregion
+            action();            
             #region 方法2
             //Exam exam = (this.tabControl1.SelectedIndex == 8) ? new Exam() : null;
             //if (exam != null) exam.Show();
@@ -661,13 +659,15 @@ namespace ADO.NET_Homework
                     SqlCommand command = null;
                     command = new SqlCommand("Select distinct Category from MyAlbum", conn);
                     SqlDataReader dataReader = command.ExecuteReader();
-                    this.h8_cbb.Items.Clear();                    
+                    this.h8_cbb.Items.Clear();
+                    int i = 0;
                     while (dataReader.Read())
                     {
                         this.h8_cbb.Items.Add(dataReader["Category"]);
-                    }
+                        i++;
+                    }                    
                     this.h8_cbb.SelectedIndex = 0;
-                } //Auton conn.close(); conn.Dispose()
+                } //Auton conn.close(); connDispose()
             }
             catch (Exception ex)
             {

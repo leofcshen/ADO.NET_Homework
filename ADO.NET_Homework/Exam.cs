@@ -16,8 +16,8 @@ namespace ADO.NET_Homework
         public Exam()
         {
             InitializeComponent();            
-            Settings.Default.NorthwindConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
-            Settings.Default.AdventureWorksConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
+            //Settings.Default.NorthwindConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
+            //Settings.Default.AdventureWorksConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True";
 
             this.tsBtn1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;//修改按鈕顯示圖片變為文字
             this.tsBtn2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;//修改按鈕顯示圖片變為文字

@@ -15,7 +15,7 @@
       <Value Profile="(Default)">Data Source=.;Initial Catalog=AdventureWorks;Integrated Security=True</Value>
     </Setting>
     <Setting Name="myLocalDB" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Github\ADO.NET_Homework\ADO.NET_Homework\Database1.mdf;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename= \Database1.mdf;Integrated Security=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
